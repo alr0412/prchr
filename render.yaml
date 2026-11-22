@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: prchr-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false # set the Neon direct DSN in the Render dashboard
+      - key: CORS_ORIGINS
+        value: '["https://alr0412.github.io","http://localhost:5173"]'
+      - key: PYTHON_VERSION
+        value: 3.12.7
