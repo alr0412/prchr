@@ -37,15 +37,15 @@ class ProgramSummary(BaseModel):
     city: str
     degree: Degree
     studyForm: StudyForm
+    exams: str
+    language: str
+    militaryDepartment: Military
 
 
 class ProgramDetail(ProgramSummary):
     faculty: str
     duration: str
-    exams: str
     plan: str
-    language: str
-    militaryDepartment: Military
     dormitory: str
     address: str
     phone: str

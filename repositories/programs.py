@@ -15,7 +15,10 @@ BASE_SELECT = """
         p.paid_score        AS "paidScore",
         p.city,
         p.degree,
-        p.study_form        AS "studyForm"
+        p.study_form        AS "studyForm",
+        p.exams,
+        p.language,
+        p.military_department AS "militaryDepartment"
     FROM programs p
     JOIN universities u ON u.id = p.university_id
 """
