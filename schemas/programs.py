@@ -17,6 +17,7 @@ class StudyForm(str, Enum):
 class Military(str, Enum):
     yes = "Есть"
     no = "Нет"
+    unknown = "Не указано"
 
 
 class ScoreHistoryItem(BaseModel):
@@ -37,6 +38,7 @@ class ProgramSummary(BaseModel):
     city: str
     degree: Degree
     studyForm: StudyForm
+    duration: str
     exams: str
     language: str
     militaryDepartment: Military
@@ -44,7 +46,6 @@ class ProgramSummary(BaseModel):
 
 class ProgramDetail(ProgramSummary):
     faculty: str
-    duration: str
     plan: str
     dormitory: str
     address: str

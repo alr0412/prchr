@@ -16,6 +16,7 @@ BASE_SELECT = """
         p.city,
         p.degree,
         p.study_form        AS "studyForm",
+        p.duration,
         p.exams,
         p.language,
         p.military_department AS "militaryDepartment"
@@ -94,7 +95,7 @@ async def count_programs(conn: asyncpg.Connection, *, filters: dict[str, Any]) -
 PROGRAM_DETAIL_SELECT = """
     SELECT
         p.id,
-        u.short_name           AS "university",
+        u.name                 AS "university",
         u.short_name           AS "shortName",
         p.faculty,
         p.title,
